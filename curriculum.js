@@ -22,7 +22,7 @@ number_of_eggs = 6
 console.log(number_of_eggs + 6, my_sentence)
 
 // -- Code comments
-// for Javascript //, # for Python, /* for CSS */, <!-- for HTML -->
+// for Javascript //, # for Python, /* for CSS */, <!-- for HTML -->. Select all you'd like to comment and press 'Cmd + //' for JS comments
 // -- Assignment by reference
 
 let new_number_of_eggs = number_of_eggs
@@ -121,24 +121,84 @@ if (x > 10) {
 }
 
 // 8.0 Loops
-// -- While loop - less common
+// -- While loop - never use
 let i = 0
 while (i < 20) {
     console.log('The value of i = ', i)
     i++
 }
 
-// -- For loop - circular parenthesis takes 3x arguments (counter variable; when to exit; increment)
+// -- For loop - circular parenthesis takes 3x arguments (counter variable; when to exit; increment) - use all the time
+const animals = [
+    'duck',
+    'dog',
+    'cat',
+    'pig'        
+]
+console.log(animals)
+
+for (let j = 0; j < animals.length; j++){
+    const current_animal = animals[j]
+    if (current_animal == 'dog') {  // equality operator ==
+        continue                    // continue allows you to skip over an iteration
+    }
+
+    if (current_animal == 'cat') {  // equality operator ===
+        break                       // break allows you to break out of the loop
+    }
+    const string_to_print = 'The animal at index: ' + j + ' And the value at that index is: ' + current_animal
+    console.log(string_to_print)
+} //the const string_to_print is local scope to the for loop. Animals is global scope as it's outside the for loop.
+
 for (let j = 0; j < 20; j++){
     console.log(j)
 }
 
-
-// -- Continue & break
+// -- Continue & break. continue allows you to skip over an iteration. Break allows you to exit the loop.
 
 // 9.0 Functions
 // -- Create a function
+// define the function
+function print_square(y) {
+    // This function prints out the square of a number
+    console.log(y * y)
+}
+//invoke the function by calling it
+print_square(4)
+
+// define the function
+function multiplier(y, z) {
+    // This function prints out the multiplication of two numbers
+    console.log(y * z)
+}
+//invoke the function by calling it
+multiplier(4,2)
+
 // -- Invoke a function
 // -- Return
+function add_strings(s1, s2) {
+    const concat_string = s1 + s2
+    console.log(concat_string)
+    if (typeof s1 !== string || typeof s2 !== string) {
+        return          // a retun alone just exits the function with no output - known as a 'guard clause'
+    }
+    return concat_string // the return is the output left in place of the execited function
+}
+
+const new_string = add_strings('Hello ', 'Liam')
+add_strings('Hello ', 'world')
+console.log('NEWSTRING: ', new_string)
+
 // -- Default inputs
-// -- Arrow functions
+//function add_strings(s1 = 'Hello', s2 = 'World') {    - if user doesn't provide s1 s2 then it defaults to the hello World
+
+// -- Arrow functions - takes less code/more efficient but don't need to use... - critical inputs are () inputs and {} logic () => {} is an arrow function. Needs a name.
+
+const arrow_function = () => {} //most basic arrow function
+
+const arg_function = (arg) => {
+    console.log('ARG :', arg)
+} 
+
+
+
