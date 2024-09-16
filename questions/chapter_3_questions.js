@@ -45,14 +45,14 @@ let array_of_people = [
     }
 ]
 
-arr = [75, 41, 35]
-
-function age_sorter(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] <= arr[i+1]) {
-            continue
-        } else {
-            
+function oldest_person(arr) {
+    let oldest = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        new_person = arr[i];
+        if (new_person.age > oldest.age) {
+            oldest = new_person
         }
-    }
+    } return oldest
 }
+
+console.log(oldest_person(array_of_people))
