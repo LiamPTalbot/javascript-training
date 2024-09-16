@@ -200,5 +200,14 @@ const arg_function = (arg) => {
     console.log('ARG :', arg)
 } 
 
+//export functions
+
+module.export = {
+    print_square,
+    multiplier,
+    add_strings,
+    grocery_list
+}
+
 
 
