@@ -56,3 +56,84 @@ function oldest_person(arr) {
 }
 
 console.log(oldest_person(array_of_people))
+
+// 3. Convert an array of strings containing numbers into an array of actual number values.
+// psuedo code
+// create an array of strings containing numbers
+// REMEMBER THE PARSEINT FUNCTION!
+
+let array_of_strings = ['1','2','3']
+
+function string_to_number (arr) {
+    array_of_numbers = []
+    for (let i = 0; i < arr.length; i++) {
+        array_of_numbers.push(parseInt(arr[i]))
+    }
+    return array_of_numbers
+}
+
+console.log(string_to_number(array_of_strings))
+
+// Write a function that sorts an array of Objects based on a specific property (e.g., 'price') in ascending order.
+// create an array of objects
+//write a function that sorts it on a key
+// .sort(function(a,b) => a - b)
+
+const shopping_list = [
+    {
+        item: 'eggs',
+        price: 1.50
+    },
+    {
+        item: 'bacon',
+        price: 2.23
+    },
+    {
+        item: 'bread',
+        price: 0.99
+    }
+]
+
+shopping_list.sort(function(a,b) {
+    return a.price - b.price
+})
+
+console.log(shopping_list)
+
+//5. Array Manipulation: Write a function that removes the first and last elements from an array and returns the modified array.
+//pseudo code
+//write an array
+//slice off 0 and .length-1
+//return the new array
+
+let original_array = [1,2,3,4,5]
+console.log(original_array.slice(1,-1))
+
+// 6. Object Iteration: Given an object representing a shopping cart with items and their quantities, write a function that calculates the total costs of the items.
+// create an object.
+
+const shopping_cart = {
+    'cheese': {
+        quantity: 3,
+        price: 1
+    },
+    'bacon': {
+        quantity: 1,
+        price: 1.4
+    },
+    'eggs': {
+        quantity: 2,
+        price: 0.19
+    }
+}
+
+function total_cost (arr) {
+    sum = null;
+    for (let i = 0; i < arr.length; i++) {
+        item_total = (arr.quantitiy * arr.price)
+        sum += item_total
+    }
+    return sum
+}
+
+console.log(total_cost(shopping_cart))
