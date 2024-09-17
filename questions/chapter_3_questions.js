@@ -127,11 +127,14 @@ const shopping_cart = {
     }
 }
 
-function total_cost (arr) {
-    sum = null;
-    for (let i = 0; i < arr.length; i++) {
-        item_total = (arr.quantitiy * arr.price)
-        sum += item_total
+function total_cost (obj) {
+    let object_keys = Object.keys(obj)   //Object.keys(object) - returns an array of keys in your object - NEEDS TO BE CAPITAL (O)bject
+    let sum = 0
+    for (let i = 0; i < object_keys.length; i ++) {
+        let current_key = object_keys[i]
+        const key_data = shopping_cart[current_key]
+        let product_total = key_data.price * key_data.quantity
+        sum = sum + product_total
     }
     return sum
 }
