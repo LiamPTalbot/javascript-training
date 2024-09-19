@@ -230,8 +230,13 @@ const pokemon = [
     }
 ]
 
-pokemon.sort(function(b,a) {
+pokemon.sort(function(a,b) {
     return b.rarity - a.rarity
 })
 
 console.log(pokemon)
+
+// 11. Array Methods: Given an array of strings, filter out all the strings with a length less than 5 characters.
+// pseudo
+// 
+
