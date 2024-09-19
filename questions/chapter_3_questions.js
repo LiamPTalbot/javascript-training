@@ -238,5 +238,26 @@ console.log(pokemon)
 
 // 11. Array Methods: Given an array of strings, filter out all the strings with a length less than 5 characters.
 // pseudo
-// 
+// make an array of strings
+// filter out all strings with a length less than 5 chars
 
+let strings = [
+    'liam',
+    'sheilla',
+    'nydia'
+]
+
+function string_filter (arr) {
+    let new_array_of_strings = []
+    for (let i = 0; i < arr.length; i++) {
+        let current_string = arr[i]
+        if (current_string.length > 5) {
+            new_array_of_strings.push(current_string)
+        }
+    }
+    return new_array_of_strings
+}
+
+console.log(string_filter(strings))
+
+// 12. Object Iteration. Write a function that counts the number of occurences of each word in a given string and stores the results in an object.
