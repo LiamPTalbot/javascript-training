@@ -132,7 +132,7 @@ function total_cost (obj) {
     let sum = 0
     for (let i = 0; i < object_keys.length; i ++) {
         let current_key = object_keys[i]
-        const key_data = shopping_cart[current_key]
+        const key_data = obj[current_key]
         let product_total = key_data.price * key_data.quantity
         sum = sum + product_total
     }
@@ -140,3 +140,98 @@ function total_cost (obj) {
 }
 
 console.log(total_cost(shopping_cart))
+
+// 7. Object manipulation: write a function that deep clones an object (i.e., copies all nested objects and arrays) to prevent unintended mutations.
+// pseudo
+// create an object with nested elements and arrays
+//write a copier function
+
+let friend = {
+    'rupert': {
+        hobbies: ['gym', 'reading', 'mathematics']
+    }
+}
+
+function copier (obj) {
+    let friend_copy = {}
+    let obj_keys = Object.keys(obj)
+    for (let i = 0; i < obj_keys.length; i ++) {
+        let this_key = obj_keys[i]
+        friend_copy[this_key] = obj[this_key]
+    }
+    return friend_copy
+}
+
+console.log(copier(friend))
+
+// 8. Object Iteration: Given an object representing a student's grades in various subjects, calculate their average grade.
+// create an object of grades
+// create a function that calculates the average
+
+const student = {
+    maths: {
+        grade: 85
+    },
+    physics: {
+        grade: 90
+    },
+    english: {
+        grade: 76
+    }
+}
+
+function grade_averager (obj) {
+    let sum = 0
+    let array_of_subjects = Object.keys(obj)
+    for (let i = 0; i < array_of_subjects.length; i++ ) {
+        current_subject = array_of_subjects[i]              //access students subject
+        current_grade = obj[current_subject].grade          //access students subjects grade
+        sum = sum + current_grade
+    }
+    return (sum / array_of_subjects.length)
+}
+
+console.log(grade_averager(student))
+
+// 9. Scoper and Closure: Create a function that returns a new function. The returned function should remember and log the number of times its been called.
+
+function inception () {
+    let number_of_invocations = 0
+
+    return function () {
+        number_of_invocations++
+        console.log(number_of_invocations)
+    }
+}
+
+const incrementer = inception()
+
+incrementer()
+incrementer()
+incrementer()
+
+// 10. Array Sorting: Write a function that sorts an array of objects based on a specific property (e.g.., date) in descending order.
+// pseudo
+// write an array of objects
+// write an function that sorts it based on a property in descending order
+
+const pokemon = [
+    {
+        name: 'charezard',
+        rarity: 100
+    },
+    {
+        name: 'pikachu',
+        rarity: 1
+    },
+    {
+        name: 'meon',
+        rarity: 38
+    }
+]
+
+pokemon.sort(function(b,a) {
+    return b.rarity - a.rarity
+})
+
+console.log(pokemon)
