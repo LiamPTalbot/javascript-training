@@ -57,7 +57,7 @@ function oldest_person(arr) {
 
 console.log(oldest_person(array_of_people))
 
-// 3. Convert an array of strings containing numbers into an array of actual number values.
+// 3. Data Transformation: Convert an array of strings containing numbers into an array of actual number values.
 // psuedo code
 // create an array of strings containing numbers
 // REMEMBER THE PARSEINT FUNCTION!
@@ -74,7 +74,7 @@ function string_to_number (arr) {
 
 console.log(string_to_number(array_of_strings))
 
-// Write a function that sorts an array of Objects based on a specific property (e.g., 'price') in ascending order.
+// 4. Array Sorting: Write a function that sorts an array of Objects based on a specific property (e.g., 'price') in ascending order.
 // create an array of objects
 //write a function that sorts it on a key
 // .sort(function(a,b) => a - b)
@@ -193,7 +193,7 @@ function grade_averager (obj) {
 
 console.log(grade_averager(student))
 
-// 9. Scoper and Closure: Create a function that returns a new function. The returned function should remember and log the number of times its been called.
+// 9. Scope and Closure: Create a function that returns a new function. The returned function should remember and log the number of times its been called.
 
 function inception () {
     let number_of_invocations = 0
@@ -261,3 +261,23 @@ function string_filter (arr) {
 console.log(string_filter(strings))
 
 // 12. Object Iteration. Write a function that counts the number of occurences of each word in a given string and stores the results in an object.
+
+let sentence = 'hello world my name is hello, what a great world my massive banana lives in ha'
+
+function word_counter (str) {
+    let counter = {}
+    let string_to_array = str.replaceAll(',','').split(' ')
+    for (let i = 0; i < string_to_array.length; i++) {
+        let current_word = string_to_array[i]
+
+        if (current_word in counter) {
+            counter[current_word] = counter[current_word] + 1
+        } else {
+            counter[current_word] = 0
+        }
+    }
+    return counter
+}
+
+console.log(word_counter(sentence))
+
