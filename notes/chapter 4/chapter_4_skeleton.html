@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Manipulation Practice</title>
-
+    <!--
+    <script src="path to .js file" defer></script>  allows you to link to .js file and runs it last with defer method.
+    -->
 </head>
 
 <body>
 
     <h1 id="main-title">DOM Manipulation</h1>
 
-    <form id="form-example">
+    <form id="form-example" onSubmit = "return handle_submit_form(event)">  <!-- added JS function, not best way-->
         <label for="name">Name:</label>
         <input type="text" id="name" name="name"><br><br>
         <label for="age">Age:</label>
@@ -35,8 +37,44 @@
     </div>
 
 <script>
-    let modalBtn = document.getElementById("close-modal-btn")   // start by targetting the element to manipulate it
-    modalBtn.innerText = "Hi Mummy"
+
+    let open_modal_btn = document.getElementById("open-modal-btn")   //start by targetting the element to manipulate it
+    let modal = document.getElementById("modal")
+    let close_modal_btn = document.getElementById("close-modal-btn")
+    let x_btn = document.querySelector(".close")    //.querySelector() method returns the first element in the DOM that matches a specified CSS selector. In this instance .close is a CSS Class Selector that finds the first element with class = close and appleis it to x_btn variable
+    let text_area = document.getElementById("text-area")
+    let name_input = document.getElementById("name")
+    let age_input = document.getElementById("age")
+    let content_area = document.getElementById("content-area")
+
+    open_modal_btn.addEventListener('click', handle_open_modal)
+
+    function handle_open_modal() {
+        console.log(text_area.value)
+        modal.style.display = 'flex'
+        text_area.value = 'Hi Mum'
+    }    
+
+    close_modal_btn.addEventListener('click', handle_close_modal)
+    x_btn.addEventListener('click', handle_close_modal)
+
+    function handle_close_modal() {
+        console.log('closing modal')
+        modal.style.display = 'none'
+    }
+
+    function handle_submit_form(event) {
+        event.preventDefault()  //prevents default refresh page
+        console.log('name: ', name_input.value)
+        console.log('age: ', age_input.value)
+    }
+
+    content_area.innerHTML = '<h1> Hi Mummy </h1>'  // target content area and its inner HTML
+    let new_HTML = document.querySelector('#content-area h1')
+    new_HTML.style.background = 'yellow'
+    new_HTML.style.color = 'pink'
+    new_HTML.style.padding = '100px'
+    
 
 </script>
 
