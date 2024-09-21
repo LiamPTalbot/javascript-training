@@ -61,3 +61,38 @@ function stop_button_propagation(event) {
 prop_btn.addEventListener('click', stop_button_propagation)
 
 // 7. Dynamic Page Styling: How can you toggle a class active on an element when it is clicked, ensuring that if the class is present it gets removed, and if its not, it gets added?
+
+let toggle_element = document.getElementById('toggle-element')
+
+function toggle_style() {
+    toggle_element.classList.toggle('active')
+}
+
+toggle_element.addEventListener('click', toggle_style)
+
+// 8. Advanced Event Handling: Write JavaScript code to change the text content of a paragraph element to display the current time when a button is clicked.
+
+let paragraph_element = document.querySelector('p')
+
+paragraph_element.innerText = new Date()
+
+// 9. Event Listener Removal: How do you remove an event listener from an element, and why might you need to do this?
+
+function my_function() {
+
+}
+
+document.getElementById('liam-is-cool').removeEventListener('click', my_function)
+
+// 10. Manipulating Attirbutes and Properties: Write JavaScript code to change the src attribute of an <img> element and explain the difference between attributes and properties in the context of DOM elements.
+
+// JS = properties
+// HTML = attributes
+
+document.querySelector('img').setAttribute('src', 'new-img.png')
+
+// 11. Utilising Dataset Attributes: Explain how to use data-* attributes within an HTML element to store extra information and how to access this information using JavaScript.
+
+let information_div = document.getElementById('info')
+console.log(information_div.dataset.userID)
+
