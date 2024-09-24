@@ -21,11 +21,22 @@ async function test_api() {
     }
 }
 
-test_api()
+//test_api()
 
-// 3. Write an async function named fetchUserData that makes a GET request to 'https://the-one-api.dev/v2/' using async/await. Log the response to the console, handling any errors that might occur.
+// 3. Write an async function named fetchUserData that makes a GET request to 'https://the-one-api.dev/v2/books' using async/await. Log the response to the console, handling any errors that might occur.
 
 
+async function fetch_user_data() {
+    try {
+        const res = await fetch ('https://the-one-api.dev/v2/books') //res is response from the endpoint URL
+        const data = await res.json()
+        console.log(data)
+    } catch(err) {
+        console.log('Error fetching data')
+    }
+}
+
+//fetch_user_data()
 
 // 4. Demonstrate how to make a POST request to 'https://api.example.com/users' to create a new user with JSON data { name: "John", age: 30 } using async/await. Ensure you set the appropriate headers and catch any errors.
 
