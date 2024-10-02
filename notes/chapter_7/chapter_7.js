@@ -1,4 +1,6 @@
-// arrow functions
+// advanced javascript methods in ES6+ 
+
+//arrow functions
 
 function my_function (input) {
     // code that is repeatable
@@ -161,3 +163,16 @@ let reduced_array = my_cool_array.reduce((accumulator, current_value, current_in
 }, '')
 console.log(reduced_array)
 
+// node package manager npm
+// npmjs.com has all the packages available to us
+// if you want to  add npm to projects you need to use the terminal
+// $ npm init -y 
+// the -y is a flag
+// that will create a package.json file in the root directory of your project
+// everything is " in JSON
+// npm install allows you to install packages and it saves it in package.json as a dependency
+// can then use modular import to use that package
+
+const express = require('express')  //this will import express from npm
+// when you install via npm a node_modules folder is added to your root repo with all the code you need
+// every package you install is added to this folder
