@@ -53,4 +53,4 @@ async function post_user_data() {
     } catch(err) {
         console.log('Error fetching data')
     }
-}
+}    
