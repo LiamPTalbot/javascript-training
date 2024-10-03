@@ -85,8 +85,11 @@ console.log(`
 // short circuits && ||
 // AND &&
 
-let person_dict = { name: 'jon'}
-let person_name_2 = person_dict.name && 'jonny'
+let person_dict = { 
+    name: 'jon'
+    }
+
+    let person_name_2 = person_dict.name && 'jonny'
 
 if (person_dict.name) {
     person_name_2 = 'jonny'
