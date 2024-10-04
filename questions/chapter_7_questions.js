@@ -92,3 +92,53 @@ for (let current_value of numbers_array) {
 //11. Given an array of numebrs, use the map method to create a new array with each number squared.
 
 
+let arr_of_numbers = [0,1,2,3,4,5,6]
+let squared_numbers = arr_of_numbers.map((current_value) => {
+    return current_value * current_value
+})
+console.log(squared_numbers)
+
+//12. How will you use the ternary operator to assign "adult" to a variable age_status if age is 18 or over, and "minor" if under 18.
+
+// if (current_age < 18) {
+//     age_status = 'minor';
+// } else {
+//     age_status = 'adult'
+// }
+
+// console.log(age_status)
+
+let current_age = 14
+let age_status = (current_age > 18) ? 'Adult' : 'Minor'
+console.log(age_status)
+
+//13. How do you use the logical AND operator to execute a function log_message() only if the variable is_logged_in is true?
+
+// const log_message = () => {
+//     console.log('logged in')
+// }
+// let is_logged_in = false
+
+// if (is_logged_in = true) {
+//     log_message()
+// }
+
+const log_message = () => {
+    console.log('logged in')
+}
+let is_logged_in = true
+
+is_logged_in && log_message()
+
+
+//14. How can you use the logical OR operator to assign a default valuye of "guest" to a variable username if the current user.name is undefined or null?
+
+let user2 = {
+    // name: 'banana muffin'
+}
+
+let username = user2.name || "guest"
+console.log(username)
+
+
+
