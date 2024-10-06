@@ -50,3 +50,59 @@ function duplication_finder (arr) {
 }
 
 console.log(duplication_finder(arr3))
+
+//4. Rotate an array to the right by k steps, where k is non-negative
+
+let start_array = [1,2,3,4,5,6]
+let k = 3
+let finish_array = [4,5,6,1,2,3]
+
+function rotate_array (nums, k) {
+    let end_values = nums.slice(k)
+    let start_values = nums.slice(0,k)
+    let new_array = [...end_values, ...start_values]
+    return new_array
+}
+
+console.log(rotate_array(start_array,k))
+
+//5. valid parenthesis
+// Questions: Given a string s containing just the chars '(', '), '{', '}', '[' and ']',
+// determine if the input string is valid. An input string is valid if:
+//
+// Open brackets must be closed by the same type of brackets.
+// Open brackets must be closed in the correct order.
+
+let valid_string = '(){}[]'
+let invalid_string = '((){}[]'
+
+function string_tester (str) {
+    const combos = {
+        '{':'}',
+        '(':')',
+        '[':']'
+    }
+
+    let stack = []
+
+    for (let current_bracket of str) {
+        if (stack.length == 0) {
+            stack.push(current_bracket)
+        } else if (current_bracket in combos) {
+            stack.push(current_bracket)
+        } else {
+            let last_value_on_stack = stack[stack.length -1]
+            if (!(last_value_on_stack in combos)) {
+                stack.push(current_bracket)
+            } else {
+                if (combos[last_value_on_stack] === current_bracket) {
+                    stack.pop()
+                }
+            }
+        }
+    }
+    return stack.length === 0
+}
+
+console.log(string_tester(valid_string))
+console.log(string_tester(invalid_string))
